@@ -6,14 +6,14 @@ class TestBasics(unittest.TestCase):
         result = rpn.calculate("1 1 +")
         self.assertEqual(2, result)
     def test_subtract(self):
-        result = rpn.calculate("5 3 -")
-        self.assertEqual(2, result)
+        result = rpn.calculate("10 7 -")
+        self.assertEqual(3, result)
     def test_multiply(self):
-        result = rpn.calculate("5 3 *")
-        self.assertEqual(15, result)
+        result = rpn.calculate("6 3 *")
+        self.assertEqual(18, result)
     def test_divide(self):
-        result = rpn.calculate("6 3 /")
-        self.assertEqual(2, result)
+        result = rpn.calculate("33 3 /")
+        self.assertEqual(11, result)
     def test_power(self):
         result = rpn.calculate("2 2 ^")
         self.assertEqual(4, result)
