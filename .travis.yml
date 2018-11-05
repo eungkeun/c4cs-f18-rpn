@@ -3,6 +3,7 @@ python:
   - "3.6"
 cache: pip
 script:
+  - pip install colorama
   - python3 -m unittest
   - coverage run test_rpn.py
   - coverage report -m
