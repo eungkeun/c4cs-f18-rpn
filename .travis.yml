@@ -3,4 +3,6 @@ python:
   - "3.6"
 cache: pip
 script:
-  - python test_rpn.py
+  - python3 -m unittest
+  - coverage run test_rpn.py
+  - coverage report -m

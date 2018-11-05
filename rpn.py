@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-
+import readline
+from colorama import init, deinit, Fore, Back
 import operator
 
 
@@ -10,6 +11,24 @@ operators = {
     '/': operator.truediv,
     '^': operator.pow,
 }
+
+class MyFirstGUI:
+    def __init__(self, master):
+        self.master = master
+        master.title("A simple GUI")
+
+        self.label = Label(master, text="This is our first GUI!")
+        self.label.pack()
+
+        self.greet_button = Button(master, text="Greet", command=self.greet)
+        self.greet_button.pack()
+
+        self.close_button = Button(master, text="Close", command=master.quit)
+        self.close_button.pack()
+
+    def greet(self):
+        print("Greetings!")
+
 
 def calculate(myarg):
     stack = list()
@@ -29,9 +48,13 @@ def calculate(myarg):
     return stack.pop()
 
 def main():
+    init()
+    print(Fore.RED + 'Welcome to Calcalcalulator')
+    print(Back.GREEN + 'Calculator Section')
     while True:
         result = calculate(input("rpn calc> "))
         print("Result: ", result)
 
 if __name__ == '__main__':
     main()
+    dinit()
